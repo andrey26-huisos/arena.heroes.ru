@@ -103,7 +103,7 @@ html,body{height:100%;height:100dvh;-webkit-text-size-adjust:100%;margin:0;backg
 <div id="pick"><div id="pt" style="font-size:26px">Выбери героя</div><div id="pctl"><div id="plane" class="seg"><button class="kb" data-l="0">⬆ Верх</button><button class="kb" data-l="1">◆ Центр</button><button class="kb" data-l="2">⬇ Низ</button></div><button class="kb" id="pbots" style="display:none">🤖 Боты: Вкл</button><div id="pnote" class="note"></div></div><div id="pc"></div></div>
 <div id="msg"><div id="mt"></div><div class="row" style="width:auto"><button id="rs">Играть снова</button><button id="mn" class="g">В меню</button></div></div>
 <div id="menu">
- <div class="ttl">⚔️ Арена Героев 3D <small style="font-size:14px;font-weight:400;opacity:.7">бета 0.4</small></div>
+ <div class="ttl">⚔️ Арена Героев 3D <small style="font-size:14px;font-weight:400;opacity:.7">бета 0.5</small></div>
  <div id="mb">
   <button id="b1">Игра против бота</button>
   <button id="b2">🌐 Онлайн: создать комнату</button>
@@ -301,14 +301,14 @@ return api})();
 
 // ---------- игра ----------
 const CLS={knight:{n:'Рыцарь',d:'Крепкий боец: волна, рывок, лечение, ульт «Кара»',max:600,mp:220,mr:2.2,hg:120,mg:35,mgr:.12,dmg:45,range:170,rate:.8,speed:300,ab:[{t:'nova',cd:5,n:'Волна',r:200,d:90,m:70},{t:'dash',cd:7,n:'Рывок',dist:320,m:55},{t:'heal',cd:14,n:'Лечение',m:110},{t:'smite',cd:40,n:'Кара',r:320,d:220,st:1.5,m:190}]},
-archer:{n:'Лучник',d:'Дальний бой: залп, отскок, ускорение, ульт «Град стрел»',max:480,mp:260,mr:2.8,hg:95,mg:45,mgr:.15,dmg:38,range:420,rate:.7,speed:310,ab:[{t:'multi',cd:5,n:'Залп',d:70,m:95},{t:'back',cd:7,n:'Отскок',m:60},{t:'haste',cd:12,n:'Ускорение',m:80},{t:'rain',cd:35,n:'Град стрел',r:300,d:150,st:.8,m:210}]},
-mage:{n:'Маг',d:'Магия: огонь, блинк, щит, ульт «Метеор»',max:420,mp:420,mr:4.2,hg:80,mg:80,mgr:.25,dmg:42,range:360,rate:.9,speed:290,ab:[{t:'fire',cd:5,n:'Огонь',r:170,d:130,m:110},{t:'dash',cd:8,n:'Блинк',dist:380,m:100},{t:'shield',cd:14,n:'Щит',m:130},{t:'meteor',cd:45,n:'Метеор',r:280,d:260,st:1.2,m:280}]},
-tank:{n:'Берсерк',d:'Танк: удар, таран, броня, ульт «Ярость»',max:950,mp:160,mr:1.8,hg:160,mg:25,mgr:.08,dmg:62,range:80,rate:1,speed:285,ab:[{t:'nova',cd:6,n:'Удар',r:240,d:130,m:45},{t:'dash',cd:8,n:'Таран',dist:420,hit:true,m:60},{t:'armor',cd:15,n:'Броня',m:60},{t:'rage',cd:50,n:'Ярость',dur:8,m:130}]},
-assassin:{n:'Ассасин',d:'Скрытный убийца: удар из тени, клинки, тень, ульт «Казнь»',max:440,mp:200,mr:2.6,hg:85,mg:28,mgr:.1,dmg:58,range:80,rate:.6,speed:335,ab:[{t:'dash',cd:6,n:'Удар из тени',dist:380,hit:true,m:55},{t:'multi',cd:5,n:'Веер клинков',d:80,m:60},{t:'haste',cd:11,n:'Тень',m:50},{t:'exec',cd:30,n:'Казнь',d:260,m:150}]},
+archer:{n:'Лучник',d:'Дальний бой: залп, отскок, ускорение, ульт «Град стрел»',max:480,mp:260,mr:2.8,hg:95,mg:45,mgr:.15,dmg:38,range:420,rate:.7,speed:325,ab:[{t:'multi',cd:5,n:'Залп',d:70,m:95},{t:'back',cd:7,n:'Отскок',m:60},{t:'haste',cd:12,n:'Ускорение',m:80},{t:'rain',cd:35,n:'Град стрел',r:300,d:150,st:.8,m:210}]},
+mage:{n:'Маг',d:'Магия: огонь, блинк, щит, ульт «Метеор»',max:420,mp:420,mr:4.2,hg:80,mg:80,mgr:.25,dmg:42,range:360,rate:.9,speed:295,ab:[{t:'fire',cd:5,n:'Огонь',r:170,d:130,m:110},{t:'dash',cd:8,n:'Блинк',dist:380,m:100},{t:'shield',cd:14,n:'Щит',m:130},{t:'meteor',cd:45,n:'Метеор',r:280,d:260,st:1.2,m:280}]},
+tank:{n:'Берсерк',d:'Танк: удар, таран, броня, ульт «Ярость»',max:950,mp:160,mr:1.8,hg:160,mg:25,mgr:.08,dmg:62,range:80,rate:1,speed:260,ab:[{t:'nova',cd:6,n:'Удар',r:240,d:130,m:45},{t:'dash',cd:8,n:'Таран',dist:420,hit:true,m:60},{t:'armor',cd:15,n:'Броня',m:60},{t:'rage',cd:50,n:'Ярость',dur:8,m:130}]},
+assassin:{n:'Ассасин',d:'Скрытный убийца: удар из тени, клинки, тень, ульт «Казнь»',max:440,mp:200,mr:2.6,hg:85,mg:28,mgr:.1,dmg:58,range:80,rate:.6,speed:350,ab:[{t:'dash',cd:6,n:'Удар из тени',dist:380,hit:true,m:55},{t:'multi',cd:5,n:'Веер клинков',d:80,m:60},{t:'haste',cd:11,n:'Тень',m:50},{t:'exec',cd:30,n:'Казнь',d:260,m:150}]},
 priest:{n:'Жрец',d:'Поддержка: лечит и защищает союзников, ульт «Священный свет»',max:460,mp:380,mr:3.6,hg:85,mg:70,mgr:.22,dmg:36,range:380,rate:.9,speed:290,ab:[{t:'nova',cd:6,n:'Священный удар',r:210,d:80,m:70},{t:'ashield',cd:14,n:'Покров',r:380,h:200,m:100},{t:'aheal',cd:11,n:'Исцеление',r:400,h:200,m:120},{t:'aheal',cd:55,n:'Священный свет',r:650,h:650,m:300}]},
 warlock:{n:'Колдун',d:'Тёмная магия: похищение жизни, проклятие, щит, ульт «Бездна»',max:430,mp:360,mr:3.4,hg:78,mg:70,mgr:.2,dmg:40,range:380,rate:.9,speed:285,ab:[{t:'drain',cd:6,n:'Похищение жизни',d:110,m:70},{t:'slow',cd:9,n:'Проклятие',r:220,d:70,sl:3.5,m:90},{t:'shield',cd:14,n:'Тёмный щит',m:90},{t:'meteor',cd:45,n:'Бездна',r:300,d:240,st:1.4,c:0x9b59ff,m:260}]},
-paladin:{n:'Паладин',d:'Страж света: молот, броня, благословение, ульт «Гнев небес»',max:780,mp:240,mr:2.6,hg:135,mg:40,mgr:.14,dmg:52,range:110,rate:.9,speed:290,ab:[{t:'smite',cd:9,n:'Молот света',r:230,d:110,st:.8,m:80},{t:'armor',cd:14,n:'Святая броня',m:70},{t:'aheal',cd:12,n:'Благословение',r:320,h:150,m:100},{t:'smite',cd:45,n:'Гнев небес',r:380,d:260,st:1.8,m:220}]},
-shaman:{n:'Шаман',d:'Шторм: цепная молния, замедление, ветер, ульт «Гроза»',max:450,mp:340,mr:3.2,hg:80,mg:65,mgr:.2,dmg:40,range:400,rate:.85,speed:295,ab:[{t:'chain',cd:5,n:'Цепная молния',d:90,m:80},{t:'slow',cd:10,n:'Болотная хватка',r:240,d:60,sl:3,m:80},{t:'haste',cd:12,n:'Дух ветра',m:70},{t:'rain',cd:40,n:'Гроза',r:340,d:170,st:.9,c:0xfff06a,m:220}]}};
+paladin:{n:'Паладин',d:'Страж света: молот, броня, благословение, ульт «Гнев небес»',max:780,mp:240,mr:2.6,hg:135,mg:40,mgr:.14,dmg:52,range:110,rate:.9,speed:275,ab:[{t:'smite',cd:9,n:'Молот света',r:230,d:110,st:.8,m:80},{t:'armor',cd:14,n:'Святая броня',m:70},{t:'aheal',cd:12,n:'Благословение',r:320,h:150,m:100},{t:'smite',cd:45,n:'Гнев небес',r:380,d:260,st:1.8,m:220}]},
+shaman:{n:'Шаман',d:'Шторм: цепная молния, замедление, ветер, ульт «Гроза»',max:450,mp:340,mr:3.2,hg:80,mg:65,mgr:.2,dmg:40,range:400,rate:.85,speed:310,ab:[{t:'chain',cd:5,n:'Цепная молния',d:90,m:80},{t:'slow',cd:10,n:'Болотная хватка',r:240,d:60,sl:3,m:80},{t:'haste',cd:12,n:'Дух ветра',m:70},{t:'rain',cd:40,n:'Гроза',r:340,d:170,st:.9,c:0xfff06a,m:220}]}};
 const CK=Object.keys(CLS),KN=['hero','creep','tower','ancient'],KC={hero:0,creep:1,tower:2,ancient:3},RR={hero:30,creep:17,tower:30,ancient:52};
 let U=[],FX=[],Q=[],T=0,spawnT=2,over=null,P=null,E=null,kills=[0,0],gen=0,paused=true,CD=[5,7,14],btns=[],UID=0;
 const UM=new Map();
@@ -379,7 +379,7 @@ function die(t,k){t.hp=0;burst(t.x,t.y,t.team?0xc9383d:0x2f7fe0,t.kind=='creep'?
 if(t.kind==='hero'){t.rs=8+t.lvl*2;kills[k.team]++}
 if(t.kind==='ancient'){NET.ov=t.team;over=t.team?'Победа! 🏆':'Поражение 💀';showMsg(over)}
 const xp0=({creep:25,tower:150,hero:90}[t.kind]||0),g0=({creep:40,tower:200,hero:250}[t.kind]||0);if(xp0||g0){const ns=U.filter(h=>h.kind==='hero'&&h.team===k.team&&alive(h)&&(h===k||D(h,t)<900));if(k.kind==='hero'&&alive(k)&&!ns.includes(k))ns.push(k);const n=ns.length;for(const h of ns)award(h,xp0*(1+.25*(n-1))/n,k.kind==='hero'?(h===k?g0:0):g0/n)}}
-function award(h,xp,gold){if(!alive(h))return;if(h===P&&gold>0)SFX.coin();h.xp+=xp;h.gold+=gold;while(h.xp>=h.lvl*100){h.xp-=h.lvl*100;h.lvl++;h.sp++;if(h.bot)botSpend(h);else if(h===P)updUp();fx({k:'r',x:h.x,y:h.y,rad:120,t:.6,c:0xffd34d});const cc=CLS[h.cls];h.max+=cc.hg;h.hp=Math.min(h.max,h.hp+cc.hg*1.7);h.dmg+=9;h.mmax+=cc.mg;h.mana=Math.min(h.mmax,h.mana+cc.mg);h.mreg+=cc.mgr;h.speed=Math.min(h.speed+5,450)}}
+function award(h,xp,gold){if(!alive(h))return;if(h===P&&gold>0)SFX.coin();h.xp+=xp;h.gold+=gold;while(h.xp>=h.lvl*100){h.xp-=h.lvl*100;h.lvl++;h.sp++;if(h.bot)botSpend(h);else if(h===P)updUp();fx({k:'r',x:h.x,y:h.y,rad:120,t:.6,c:0xffd34d});const cc=CLS[h.cls];h.max+=cc.hg;h.hp=Math.min(h.max,h.hp+cc.hg*1.7);h.dmg+=9;h.mmax+=cc.mg;h.mana=Math.min(h.mmax,h.mana+cc.mg);h.mreg+=cc.mgr}}
 function hit(a,t,dmg){if(!alive(t))return;SFX.hit(a,t);if(t.arm>0)dmg*=.5;if(t.sh>0){const x=Math.min(t.sh,dmg);t.sh-=x;dmg-=x}t.hp-=dmg;t.fl=.12;if(dmg>=1&&(a.kind=='hero'||t.kind=='hero')){const v=Math.round(dmg);dnum(t,v,t.team===P.team?'#ff6b6b':'#ffe27a');rec(['d',Math.round(t.x),Math.round(t.y),t.kind=='hero'?1:0,t.team,v])}if(t.hp<=0)die(t,a)}
 const RG=new THREE.RingGeometry(.9,1,40);
 function fx(o){SFX.fx(o);rec(['f',o.k,Math.round(o.x),Math.round(o.y),o.x2===undefined?0:Math.round(o.x2),o.y2===undefined?0:Math.round(o.y2),o.rad||0,o.t,o.c]);o.t0=o.t;if(o.k=='l'){const g=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(o.x,40,o.y),new THREE.Vector3(o.x2,40,o.y2)]);o.m=new THREE.Line(g,new THREE.LineBasicMaterial({color:o.c,transparent:true}))}
@@ -554,7 +554,7 @@ function joyTick(){if(JOY.id<0||!P||paused||over||!alive(P))return;const l=Math.
 const tx=clamp(P.x+JOY.dx/l*500,0,W),ty=clamp(P.y+JOY.dy/l*500,0,H);if(isGuest())send({t:'mv',x:Math.round(tx),y:Math.round(ty)});else{P.focus=null;P.mt={x:tx,y:ty}}}
 
 const ray=new THREE.Raycaster(),pl=new THREE.Plane(new THREE.Vector3(0,1,0),0),v3=new THREE.Vector3();
-let held=false,lastCmd=0,mxp=-1,myp=-1,offX=0,offZ=0,zm=1,panning=false,pnx=0,pny=0;const FC={x:0,y:0};let camFree=lsGet('arena_camfree')==='1';
+let held=false,lastCmd=0,mxp=-1,myp=-1,offX=0,offZ=0,zm=1,panning=false,pnx=0,pny=0;const FC={x:0,y:0};let lpP=null,lpx=0,lpy=0;let camFree=lsGet('arena_camfree')==='1';
 const cbx=()=>camFree?FC.x:P.x,cby=()=>camFree?FC.y:P.y;
 function clampOff(){if(camFree){offX=clamp(offX,-FC.x,W-FC.x);offZ=clamp(offZ,-FC.y,H-FC.y)}else{offX=clamp(offX,-2500,2500);offZ=clamp(offZ,-2500,2500)}}
 function setCamFree(v){camFree=!!v;lsSet('arena_camfree',camFree?'1':'0');if(P){if(camFree){FC.x=P.x+offX;FC.y=P.y+offZ}offX=offZ=0}toast(camFree?'Камера свободна: край экрана, стрелки, колесо мыши, миникарта. Пробел — к герою':'Камера следует за героем')}const keys=new Set();
@@ -586,7 +586,7 @@ $('plane').addEventListener('click',e=>{const b=e.target.closest('button');if(!b
 $('pbots').onclick=()=>{if(NET.role!=='host')return;NET.bots=!NET.bots;lsSet('arena_bots',NET.bots?'1':'0');updPick();send({t:'cfg',bots:NET.bots})};
 function showPick(){paused=true;$('pc').style.visibility='';$('pctl').style.visibility='';$('pt').textContent='Выбери героя';updPick();pk.style.display='flex'}
 function pickWait(t){$('pc').style.visibility='hidden';$('pctl').style.visibility='hidden';$('pt').textContent=t}
-Object.entries(CLS).forEach(([k,c])=>{const b=document.createElement('button');b.innerHTML='<b>'+c.n+'</b><br><small>'+c.d+'</small><br><small>❤ '+c.max+' · 💧 '+c.mp+'</small>';
+Object.entries(CLS).forEach(([k,c])=>{const b=document.createElement('button');b.innerHTML='<b>'+c.n+'</b><br><small>'+c.d+'</small><br><small>❤ '+c.max+' · 💧 '+c.mp+' · 👟 '+c.speed+'</small>';
 b.onclick=()=>{if(NET.role==='solo'){pk.style.display='none';init(k,undefined,{pl:LANE,gl:LANE,bots:true});paused=false;toast('Твоя линия: '+LNN[LANE])}
 else if(NET.role==='host'){NET.picks.h=k;NET.picks.hl=LANE;pickWait('Ждём выбор соперника…');tryStart()}
 else{send({t:'pick',cls:k,lane:LANE});pickWait('Ждём, пока хозяин начнёт матч…')}};$('pc').appendChild(b)});
@@ -610,6 +610,7 @@ const ITEMS=[
 {id:'crown',n:'Корона мудрости',i:'👑',c:1300,mp:400,mreg:4,d:'+400 макс. маны, +4 маны/сек'},
 {id:'ring',n:'Кольцо жизни',i:'💍',c:400,d:'+6 ХП/сек',regen:6},
 {id:'boots',n:'Сапоги',i:'👟',c:450,d:'+45 скорость',spd:45},
+{id:'boots2',n:'Сапоги скорохода',i:'🥾',c:1000,d:'+90 скорость',spd:90},
 {id:'sword',n:'Клинок',i:'🗡️',c:500,d:'+22 урон',dmg:22},
 {id:'armor',n:'Кираса',i:'🛡️',c:650,d:'+250 макс. ХП',max:250},
 {id:'staff',n:'Посох',i:'🔮',c:900,d:'−15% перезарядки скиллов',cdr:.15},
@@ -634,7 +635,7 @@ case'barrier':u.sh=Math.max(u.sh||0,v);u.shT=5;ring(0x66e0ff);return true;
 case'banner':u.rg=Math.max(u.rg,6);ring(0xff3030);return true;
 case'thunder':aoeU(u,u.x,u.y,260,v,0xfff06a,.8,0);return true;
 case'frost':aoeU(u,u.x,u.y,400,v,0x66e0ff,0,4);return true;
-case'tp':{if(D(u,base)<400)return false;const ox=u.x,oy=u.y;u.x=base.x+(u.team?-80:80);u.y=base.y+(u.team?80:-80);u.mt=null;u.focus=null;fx({k:'l',x:ox,y:oy,x2:u.x,y2:u.y,t:.5,c:0xb48cff});fx({k:'r',x:ox,y:oy,rad:90,t:.5,c:0xb48cff});fx({k:'r',x:u.x,y:u.y,rad:90,t:.5,c:0xb48cff});return true}
+case'tp':{if(D(u,base)<400)return false;const ox=u.x,oy=u.y;u.x=base.x+(u.team?-80:80);u.y=base.y+(u.team?80:-80);u.mt=null;u.focus=null;if(u===P){offX=offZ=0;FC.x=u.x;FC.y=u.y}fx({k:'l',x:ox,y:oy,x2:u.x,y2:u.y,t:.5,c:0xb48cff});fx({k:'r',x:ox,y:oy,rad:90,t:.5,c:0xb48cff});fx({k:'r',x:u.x,y:u.y,rad:90,t:.5,c:0xb48cff});return true}
 case'blink':{const a=pt?Math.atan2(pt.y-u.y,pt.x-u.x):u.mt?Math.atan2(u.mt.y-u.y,u.mt.x-u.x):u.face,d=pt?Math.min(v,Math.max(60,D(u,pt))):v,ox=u.x,oy=u.y;u.x=clamp(u.x+Math.cos(a)*d,10,W-10);u.y=clamp(u.y+Math.sin(a)*d,10,H-10);fx({k:'l',x:ox,y:oy,x2:u.x,y2:u.y,t:.3,c:0xffffff});fx({k:'r',x:u.x,y:u.y,rad:60,t:.4,c:0xdfe6ff});return true}}
 return false}
 const slotId=(u,s)=>s<0?(u.tp?'tp':null):u.inv[s];
@@ -678,6 +679,7 @@ const r=Math.max(.001,u.hp/u.max);u.s1.scale.x=u.bw*r;animU(u,dtr,tt)}
 for(const f of FX){const k=f.t/f.t0;f.m.material.opacity=k;if(f.k=='r')f.m.scale.setScalar(f.rad*(1.05-k))}
 if(!MOB){const es=1100*dtr*zm;if(keys.has(BK.center)){offX=offZ=0;if(camFree){FC.x=P.x;FC.y=P.y}}else{if(mxp>=0&&!held&&!panning){if(mxp<8)offX-=es;else if(mxp>innerWidth-8)offX+=es;if(myp<8)offZ-=es;else if(myp>innerHeight-8)offZ+=es}
 if(keys.has('ArrowLeft'))offX-=es;if(keys.has('ArrowRight'))offX+=es;if(keys.has('ArrowUp'))offZ-=es;if(keys.has('ArrowDown'))offZ+=es}clampOff()}
+if(lpP!==P){lpP=P;lpx=P.x;lpy=P.y}else{if(Math.hypot(P.x-lpx,P.y-lpy)>500){offX=offZ=0;FC.x=P.x;FC.y=P.y}lpx=P.x;lpy=P.y}
 const CZ=520*zm,tx=cbx()+offX,ty=cby()+offZ;const ck=panning?1:.15;cam.position.x+=(tx-cam.position.x)*ck;cam.position.z+=(ty+CZ-cam.position.z)*ck;cam.position.y+=(650*zm-cam.position.y)*.2;cam.lookAt(cam.position.x,0,cam.position.z-CZ);
 ren.shadowMap.needsUpdate=QL>0&&FR%(QL>1?2:3)===0;
 ren.render(scene,cam);
